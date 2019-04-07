@@ -17,5 +17,39 @@ jobs:
   - script: |
       set -eux
       export LC_ALL=en_US.UTF-8
-      make -j4
+      mkdir -p ../webroot
+      git clone -b gh-pages https://github.com/neverpanic/langchristian.de ../webroot || true
+      cwd=$(pwd)
+      pushd ../webroot
+      make -f $cwd/Makefile -j4
+      popd
     displayName: 'Build website'
+  - script: |
+      set -eux
+      pushd ../webroot
+      git config user.name "Azure Pipelines"
+      git config user.email "azuredevops@microsoft.com"
+      git add .
+      git diff-index --quiet --cached HEAD -- || git commit -m "Updating GitHub Pages"
+    displayName: 'Commit GitHub pages'
+  - task: InstallSSHKey@0
+    inputs:
+      hostName: github.com
+      sshPublicKey: |
+        ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFrbmasoUxEjCmpe3rarQ/mzp4pZJkmTmwnqYoDqj+7S
+      sshKeySecureFile: azure-deploykey
+    condition: |
+      and(not(eq(variables['Build.Reason'], 'PullRequest')),
+          eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  - script: |
+      umask 0077
+      mkdir -p ~/.ssh
+      echo 'github.com,192.30.252.130 ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pLlVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFzLQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFImWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eOzQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqnTWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==' >~/.ssh/known_hosts
+      pushd ../webroot
+      git remote set-url --push origin git@github.com:neverpanic/langchristian.de.git
+      git push origin HEAD:gh-pages
+      popd
+    displayName: 'Publish GitHub Pages'
+    condition: |
+      and(not(eq(variables['Build.Reason'], 'PullRequest')),
+          eq(variables['Build.SourceBranch'], 'refs/heads/master'))
