@@ -1,0 +1,21 @@
+# https://aka.ms/yaml
+
+resources:
+  containers:
+  - container: build
+    image: neverpanic/langchristian-de-build
+
+trigger:
+- master
+
+jobs:
+- job: build
+  pool:
+    vmImage: 'Ubuntu-16.04'
+  container: build
+  steps:
+  - script: |
+      set -eux
+      export LC_ALL=en_US.UTF-8
+      make -j4
+    displayName: 'Build website'
