@@ -101,7 +101,7 @@
             <div class="columns portfolio-item">
               <div class="item-wrap">
                 <a href="#modal-portrait-{{ loop.index }}" title="">
-                  <img alt="" src="images/portraits/thumbs/{{ image | e }}" srcset="images/portraits/thumbs/2x/{{ image | e }} 2x">
+                  <img alt="" src="images/thumbs/portraits/{{ image | e }}" srcset="images/thumbs/2x/portraits/{{ image | e }} 2x">
                   <div class="overlay">
                     <div class="portfolio-item-meta">
                     </div>
@@ -118,7 +118,7 @@
       =============================================================== -->
       {% for image in images.images %}
         <div id="modal-portrait-{{ loop.index }}" class="popup-modal mfp-hide">
-          <img class="scale-with-grid" src="images/portraits/modal/{{ image | e }}" srcset="images/portraits/modal/2x/{{ image | e }} 2x" alt="" />
+          <img class="scale-with-grid" src="images/modal/portraits/{{ image | e }}" srcset="images/modal/2x/portraits/{{ image | e }} 2x" alt="" />
           <div class="link-box">
             <a class="popup-modal-dismiss">Schließen</a>
           </div>
@@ -144,7 +144,7 @@
             <div class="columns portfolio-item">
               <div class="item-wrap">
                 <a href="#modal-{{ loop.index }}" title="">
-                  <img alt="" src="images/covers/thumbs/{{ disc.cover | e }}" srcset="images/covers/thumbs/2x/{{ disc.cover | e }} 2x">
+                  <img alt="" src="images/thumbs/covers/{{ disc.cover | e }}" srcset="images/thumbs/2x/covers/{{ disc.cover | e }} 2x">
                   <div class="overlay">
                     <div class="portfolio-item-meta">
                       <h5>{{ disc.title | e }}</h5>
@@ -163,7 +163,7 @@
       =============================================================== -->
       {% for disc in discography.percussion.discs %}
         <div id="modal-{{ loop.index }}" class="popup-modal mfp-hide">
-          <img class="scale-with-grid" src="images/covers/modal/{{ disc.cover | e }}" srcset="images/covers/modal/2x/{{ disc.cover | e }} 2x" alt="" />
+          <img class="scale-with-grid" src="images/modal/covers/{{ disc.cover | e }}" srcset="images/modal/2x/covers/{{ disc.cover | e }} 2x" alt="" />
           <div class="description-box">
             <h4>{{ disc.title | e }}</h4>
             <p>{{ disc.artist | e }}</p>
@@ -199,7 +199,7 @@
             <div class="columns portfolio-item">
               <div class="item-wrap">
                 <a href="#modal-conduct-{{ loop.index }}" title="">
-                  <img alt="" src="images/covers/thumbs/{{ disc.cover | e }}" srcset="images/covers/thumbs/2x/{{ disc.cover | e }} 2x">
+                  <img alt="" src="images/thumbs/covers/{{ disc.cover | e }}" srcset="images/thumbs/2x/covers/{{ disc.cover | e }} 2x">
                   <div class="overlay">
                     <div class="portfolio-item-meta">
                       <h5>{{ disc.title | e }}</h5>
@@ -218,7 +218,7 @@
       =============================================================== -->
       {% for disc in discography.conducting.discs %}
         <div id="modal-conduct-{{ loop.index }}" class="popup-modal mfp-hide">
-          <img class="scale-with-grid" src="images/covers/modal/{{ disc.cover | e }}" srcset="images/covers/modal/2x/{{ disc.cover | e }} 2x" alt="" />
+          <img class="scale-with-grid" src="images/modal/covers/{{ disc.cover | e }}" srcset="images/modal/2x/covers/{{ disc.cover | e }} 2x" alt="" />
           <div class="description-box">
             <h4>{{ disc.title | e }}</h4>
             <p>{{ disc.artist | e }}</p>

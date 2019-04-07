@@ -36,36 +36,36 @@ discography:
       Christian Lang ist als **Schlagzeuger** unter anderem auf den folgenden
       Tonträgern zu hören.
     discs:
-      - cover: salutations.jpg
+      - cover: salutations.png
         title: Salutations
         artist: Auswahlorchester Oberfranken
         subtext: "BR, 1999"
-      - cover: gruss-aus-franken.jpg
+      - cover: gruss-aus-franken.png
         title: Gruss aus Franken
         artist: Heeresmusikkorps 12
         subtext: "AMOS, 2002"
         links:
           - url: https://amos-records.com/de/gemischt/1859-gruss-aus-franken.html
             text: AMOS Records
-      - cover: fatum.jpg
+      - cover: fatum.png
         title: Fatum
         artist: Nordbayerisches Jugendblasorchester
         subtext: "BR, 2004"
         links:
           - url: http://www.nbjbo.de/diskografie/fatum/
             text: NBJBO Diskografie
-      - cover: raise-of-the-son.jpg
+      - cover: raise-of-the-son.png
         title: Raise of the Son
         artist: Nordbayerisches Jugendblasorchester
         subtext: "kraftstrom musikproductions, 2009"
         links:
           - url: http://www.nbjbo.de/diskografie/raise-of-the-son/
             text: NBJBO Diskografie
-      - cover: wmc-kerkrade.jpg
+      - cover: wmc-kerkrade.png
         title: World Music Contest
         artist: Schwäbische Bläserphilharmonie
         subtext: "L1 Radio & Mirasound, WMC, 2009"
-      - cover: 25-jahre.jpg
+      - cover: 25-jahre.png
         title: 25 Jahre
         artist: Nordbayerisches Jugendblasorchester
         subtext: "BR, 2013"
@@ -79,14 +79,14 @@ discography:
       Christian Lang ist als **Dirigent** unter anderem auf den folgenden
       Tonträgern zu hören.
     discs:
-      - cover: 34-grad.jpg
+      - cover: 34-grad.png
         title: 34º
         artist: Symphonisches Blasorchester Grafenrheinfeld
         subtext: "Polyphonic, 2013"
         links:
           - url: http://www.musikverein-grafenrheinfeld.de/musik/cds/
             text: Musikverein Grafenrheinfeld
-      - cover: 1000-takte-blasmusik.jpg
+      - cover: 1000-takte-blasmusik.png
         title: 1000 Takte Blasmusik - Kreisverband Bamberg
         artist: JBO Oberhaid / MV Breitengüßbach
         subtext: "Tontechnik Först/Dietz, 2014"
