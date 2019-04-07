@@ -1,0 +1,11 @@
+.tox
+__pycache__
+index.html
+images/covers/modal/*.jpg
+images/covers/modal/2x/*.jpg
+images/covers/thumbs/*.jpg
+images/covers/thumbs/2x/*.jpg
+images/portraits/modal/*.jpg
+images/portraits/modal/2x/*.jpg
+images/portraits/thumbs/*.jpg
+images/portraits/thumbs/2x/*.jpg

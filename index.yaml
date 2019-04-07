@@ -1,0 +1,123 @@
+title: Christian Lang – Diplommusiker, Musikpädagoge, BA Dirigieren, Gymnasiallehrer Musik
+meta_description: Christian Lang – Diplommusiker, staatlich geprüfter Musikpädagoge, Bachelor of Arts – Dirigieren, Gymniasiallehrer im Fach Musik
+meta_author: Christian Lang
+
+home:
+  title: Christian Lang
+  subtitle: |-
+    Diplommusiker, staatlich geprüfter Musikpädagoge,  
+    Bachelor of Arts – Dirigieren, Gymnasiallehrer im Fach Musik.
+  scrolltext: >-
+    Scrollen um mehr zu erfahren.
+
+bio:
+  profile_image: images/profilepic.jpg
+  profile_image2x: images/profilepic-2x.jpg
+  sections:
+    - title: Biographie
+      textfile: biographie.md
+
+images:
+  title: Bilder
+  images:
+    - 20130403_2950-Lang-Col.jpg
+    - 20130403_3036-Lang-A-hinten-grau.jpg
+    - 20130403_3046-Lang-A-Basis.jpg
+    - 20130403_3084-Lang-A-Col.jpg
+    - 20130403_3092-Lang-A-Col.jpg
+    - 20130403_3120-Lang-B-partielle-schaerfe.jpg
+    - 20130403_3132-Lang-B-neutraler.jpg
+    - 20130403_3161-Lang-A-normal.jpg
+
+discography:
+  percussion:
+    title: Diskographie Schlagzeug
+    text: >-
+      Christian Lang ist als **Schlagzeuger** unter anderem auf den folgenden
+      Tonträgern zu hören.
+    discs:
+      - cover: salutations.jpg
+        title: Salutations
+        artist: Auswahlorchester Oberfranken
+        subtext: "BR, 1999"
+      - cover: gruss-aus-franken.jpg
+        title: Gruss aus Franken
+        artist: Heeresmusikkorps 12
+        subtext: "AMOS, 2002"
+        links:
+          - url: https://amos-records.com/de/gemischt/1859-gruss-aus-franken.html
+            text: AMOS Records
+      - cover: fatum.jpg
+        title: Fatum
+        artist: Nordbayerisches Jugendblasorchester
+        subtext: "BR, 2004"
+        links:
+          - url: http://www.nbjbo.de/diskografie/fatum/
+            text: NBJBO Diskografie
+      - cover: raise-of-the-son.jpg
+        title: Raise of the Son
+        artist: Nordbayerisches Jugendblasorchester
+        subtext: "kraftstrom musikproductions, 2009"
+        links:
+          - url: http://www.nbjbo.de/diskografie/raise-of-the-son/
+            text: NBJBO Diskografie
+      - cover: wmc-kerkrade.jpg
+        title: World Music Contest
+        artist: Schwäbische Bläserphilharmonie
+        subtext: "L1 Radio & Mirasound, WMC, 2009"
+      - cover: 25-jahre.jpg
+        title: 25 Jahre
+        artist: Nordbayerisches Jugendblasorchester
+        subtext: "BR, 2013"
+        links:
+          - url: http://www.nbjbo.de/diskografie/25-jahre-nbjbo/
+            text: NBJBO Diskografie
+
+  conducting:
+    title: Diskographie Dirigieren
+    text: >-
+      Christian Lang ist als **Dirigent** unter anderem auf den folgenden
+      Tonträgern zu hören.
+    discs:
+      - cover: 34-grad.jpg
+        title: 34º
+        artist: Symphonisches Blasorchester Grafenrheinfeld
+        subtext: "Polyphonic, 2013"
+        links:
+          - url: http://www.musikverein-grafenrheinfeld.de/musik/cds/
+            text: Musikverein Grafenrheinfeld
+      - cover: 1000-takte-blasmusik.jpg
+        title: 1000 Takte Blasmusik - Kreisverband Bamberg
+        artist: JBO Oberhaid / MV Breitengüßbach
+        subtext: "Tontechnik Först/Dietz, 2014"
+
+citations:
+  - text: >-
+      Die Musik drückt das aus, was nicht gesagt werden kann und worüber zu
+      schweigen unmöglich ist.
+    author: Victor Hugo
+  - text: >-
+      Wenn einer mit Vergnügen zu einer Musik in Reih und Glied marschieren
+      kann, dann hat er sein großes Gehirn nur aus Irrtum bekommen, da für ihn
+      das Rückenmark schon völlig genügen würde.
+    author: Albert Einstein
+  - text: >-
+      Das Beste in der Musik steht nicht in den Noten.
+    author: Gustav Mahler
+  - text: >-
+      Die Musik spricht für sich allein. Vorausgesetzt, wir geben ihr eine
+      Chance.
+    author: Yehudi Menuhin
+  - text: >-
+      Wenn Du ein Schiff bauen willst, dann rufe nicht die Menschen zusammen,
+      um Holz zu sammeln, Aufgaben zu verteilen und die Arbeit einzuteilen,
+      sondern lehre sie die Sehnsucht nach dem großen, weiten Meer.
+    author: Antoine de Saint-Exupéry
+
+contact:
+  title: Kontakt
+  widgets:
+    - title: Telefon & Email
+      lines:
+        - "+49&nbsp;176&nbsp;/&nbsp;21188248"
+        - "mail@<em>&lt;nachname&gt;</em><em>&lt;vorname&gt;</em>.de"

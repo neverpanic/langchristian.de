@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!-- vim:et:ts=2:sts=2:sw=2:tw=80
+  -->
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"><![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <!--- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>{{ title | striptags | e }}</title>
+  <meta name="description" content="{{ meta_description | e }}">
+  <meta name="author" content="{{ meta_author }}">
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="css/default.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/media-queries.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <!-- Script
+  ================================================== -->
+  <script src="js/modernizr.js"></script>
+
+  <!-- Favicons
+  ================================================== -->
+  <!-- FIXME add a new favicon -->
+  <!-- <link rel="shortcut icon" href="favicon.png" > -->
+</head>
+<body>
+  <!-- Header
+  ================================================== -->
+  <header id="home">
+    <nav id="nav-wrap">
+      <a class="mobile-btn" href="#nav-wrap" title="Navigation anzeigen">Navigation anzeigen</a>
+      <a class="mobile-btn" href="#" title="Navigation ausblenden">Navigation ausblenden</a>
+
+      <ul id="nav" class="nav">
+        <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+        <li><a class="smoothscroll" href="#bio">{{ bio.sections[0].title | e }}</a></li>
+        <li><a class="smoothscroll" href="#bilder">{{ images.title | e }}</a></li>
+        <li><a class="smoothscroll" href="#diskographie-schlagzeug">{{ discography.percussion.title | e }}</a></li>
+        <li><a class="smoothscroll" href="#diskographie-dirigieren">{{ discography.conducting.title | e }}</a></li>
+        <li><a class="smoothscroll" href="#kontakt">{{ contact.title | e }}</a></li>
+      </ul> <!-- end #nav -->
+    </nav> <!-- end #nav-wrap -->
+
+    <div class="row banner">
+      <div class="banner-text">
+        <h1 class="responsive-headline">{{ home.title | e }}</h1>
+        <h3>
+          {{ home.subtitle | markdown | safe }}
+        </h3>
+        <hr>
+        <a class="smoothscroll" href="#bio">{{ home.scrolltext | e }}</a>
+      </div>
+    </div>
+
+    <p class="scrolldown">
+      <a class="smoothscroll" href="#bio"><i class="icon-down-circle"></i></a>
+    </p>
+  </header> <!-- Header End -->
+
+  <!-- Bio Section
+  ================================================== -->
+  <section id="bio">
+    <div class="row">
+      <div class="three columns">
+        <img class="profile-pic" src="{{ bio.profile_image | e }}" srcset="{{ bio.profile_image2x | e }} 2x" alt="" />
+      </div>
+
+      <div class="nine columns main-col">
+        {% for section in bio.sections %}
+          <h2>{{ section.title | e }}</h2>
+
+          <div class="bio-textcolumns">
+            {{ section.textfile | fromfile | markdown | safe }}
+          </div>
+        {% endfor %}
+      </div> <!-- end .main-col -->
+    </div>
+  </section> <!-- Bio Section End-->
+
+  <!-- Bilder Section
+  ================================================== -->
+  <section id="bilder">
+    <!-- Bilder
+    =============================================== -->
+    <div class="row">
+      <div class="twelve columns collapsed">
+        <h1>{{ images.title | e }}</h1>
+
+        <!-- portfolio-wrapper -->
+        <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+          {% for image in images.images %}
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                <a href="#modal-portrait-{{ loop.index }}" title="">
+                  <img alt="" src="images/portraits/thumbs/{{ image | e }}" srcset="images/portraits/thumbs/2x/{{ image | e }} 2x">
+                  <div class="overlay">
+                    <div class="portfolio-item-meta">
+                    </div>
+                  </div>
+                  <div class="link-icon"><i class="icon-plus"></i></div>
+                </a>
+              </div>
+            </div> <!-- item end -->
+          {% endfor %}
+        </div> <!-- portfolio-wrapper end -->
+      </div> <!-- twelve columns end -->
+
+      <!-- Modal Popup
+      =============================================================== -->
+      {% for image in images.images %}
+        <div id="modal-portrait-{{ loop.index }}" class="popup-modal mfp-hide">
+          <img class="scale-with-grid" src="images/portraits/modal/{{ image | e }}" srcset="images/portraits/modal/2x/{{ image | e }} 2x" alt="" />
+          <div class="link-box">
+            <a class="popup-modal-dismiss">Schließen</a>
+          </div>
+        </div><!-- modal-portrait-{{ loop.index }} End -->
+      {% endfor %}
+    </div> <!-- row End -->
+  </section> <!-- Bilder Section End-->
+
+
+  <!-- Diskographie Schlagzeug Section
+  ================================================== -->
+  <section id="diskographie-schlagzeug">
+    <div class="row">
+      <div class="twelve columns collapsed">
+        <h1>{{ discography.percussion.title | e }}</h1>
+        <div class="text-center">
+          {{ discography.percussion.text | markdown | safe }}
+        </div>
+
+        <!-- portfolio-wrapper -->
+        <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+          {% for disc in discography.percussion.discs %}
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                <a href="#modal-{{ loop.index }}" title="">
+                  <img alt="" src="images/covers/thumbs/{{ disc.cover | e }}" srcset="images/covers/thumbs/2x/{{ disc.cover | e }} 2x">
+                  <div class="overlay">
+                    <div class="portfolio-item-meta">
+                      <h5>{{ disc.title | e }}</h5>
+                      <p>{{ disc.artist | e }}</p>
+                    </div>
+                  </div>
+                  <div class="link-icon"><i class="icon-plus"></i></div>
+                </a>
+              </div>
+            </div> <!-- item end -->
+          {% endfor %}
+        </div> <!-- portfolio-wrapper end -->
+      </div> <!-- twelve columns end -->
+
+      <!-- Modal Popup
+      =============================================================== -->
+      {% for disc in discography.percussion.discs %}
+        <div id="modal-{{ loop.index }}" class="popup-modal mfp-hide">
+          <img class="scale-with-grid" src="images/covers/modal/{{ disc.cover | e }}" srcset="images/covers/modal/2x/{{ disc.cover | e }} 2x" alt="" />
+          <div class="description-box">
+            <h4>{{ disc.title | e }}</h4>
+            <p>{{ disc.artist | e }}</p>
+            <span class="categories"><i class="fa fa-tag"></i>{{ disc.subtext | e }}</span>
+          </div>
+          <div class="link-box">
+            {% for link in disc.links | default([]) %}
+              <a href="{{ link.url | e }}">{{ link.text | e }}</a>
+            {% endfor %}
+            <a class="popup-modal-dismiss">Schließen</a>
+          </div>
+        </div><!-- modal-{{ loop.index }} End -->
+      {% endfor %}
+
+    </div> <!-- row End -->
+  </section> <!-- Diskographie Schlagzeug Section End-->
+
+  <!-- Diskographie Section
+  ================================================== -->
+  <section id="diskographie-dirigieren">
+    <!-- Diskographie Dirigieren
+    =============================================== -->
+    <div class="row">
+      <div class="twelve columns collapsed">
+        <h1>{{ discography.conducting.title | e }}</h1>
+        <div class="text-center">
+          {{ discography.conducting.text | markdown | safe }}
+        </div>
+
+        <!-- portfolio-wrapper -->
+        <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+          {% for disc in discography.conducting.discs %}
+            <div class="columns portfolio-item">
+              <div class="item-wrap">
+                <a href="#modal-conduct-{{ loop.index }}" title="">
+                  <img alt="" src="images/covers/thumbs/{{ disc.cover | e }}" srcset="images/covers/thumbs/2x/{{ disc.cover | e }} 2x">
+                  <div class="overlay">
+                    <div class="portfolio-item-meta">
+                      <h5>{{ disc.title | e }}</h5>
+                      <p>{{ disc.artist | e }}</p>
+                    </div>
+                  </div>
+                  <div class="link-icon"><i class="icon-plus"></i></div>
+                </a>
+              </div>
+            </div> <!-- item end -->
+          {% endfor %}
+        </div> <!-- portfolio-wrapper end -->
+      </div> <!-- twelve columns end -->
+
+      <!-- Modal Popup
+      =============================================================== -->
+      {% for disc in discography.conducting.discs %}
+        <div id="modal-conduct-{{ loop.index }}" class="popup-modal mfp-hide">
+          <img class="scale-with-grid" src="images/covers/modal/{{ disc.cover | e }}" srcset="images/covers/modal/2x/{{ disc.cover | e }} 2x" alt="" />
+          <div class="description-box">
+            <h4>{{ disc.title | e }}</h4>
+            <p>{{ disc.artist | e }}</p>
+            <span class="categories"><i class="fa fa-tag"></i>{{ disc.subtext | e }}</span>
+          </div>
+          <div class="link-box">
+            {% for link in disc.links | default([]) %}
+              <a href="{{ link.url | e }}">{{ link.text | e }}</a>
+            {% endfor %}
+            <a class="popup-modal-dismiss">Schließen</a>
+          </div>
+        </div><!-- modal-{{ loop.index }} End -->
+      {% endfor %}
+    </div> <!-- row End -->
+  </section> <!-- Diskographie Section End-->
+
+
+  <!-- Testimonials Section
+  ================================================== -->
+  <section id="testimonials">
+    <div class="text-container">
+      <div class="row">
+        <!--
+          <div class="two columns header-col">
+            <h1><span>Zitate</span></h1>
+          </div>
+        -->
+        <div class="ten columns flex-container">
+          <div class="flexslider">
+            <ul class="slides">
+              {% for citation in citations %}
+                <li>
+                  <blockquote>
+                    <p>{{ citation.text }}</p>
+                    <cite>{{ citation.author }}</cite>
+                  </blockquote>
+                </li> <!-- slide ends -->
+              {% endfor %}
+            </ul>
+          </div> <!-- div.flexslider ends -->
+        </div> <!-- div.flex-container ends -->
+      </div> <!-- row ends -->
+    </div>  <!-- text-container ends -->
+  </section> <!-- Testimonials Section End-->
+
+
+  <!-- Kontakt Section
+  ================================================== -->
+  <section id="kontakt">
+    <div class="row section-head">
+      <div class="two columns header-col">
+        <h1><span>{{ contact.title | e }}</span></h1>
+      </div>
+      <div class="ten columns">
+        <div class="row">
+          <div class="six columns footer-widgets">
+            {% for widget in contact.widgets %}
+              <div class="widget widget_contact">
+                <h4>{{ widget.title | e }}</h4>
+                <p class="address">
+                  {% for line in widget.lines %}
+                    <span>{{ line | safe }}</span>
+                    {% if not loop.last %}<br>{% endif %}
+                  {% endfor %}
+                </p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- Kontakt Section End-->
+
+
+  <!-- footer
+  ================================================== -->
+  <footer>
+    <div class="row">
+      <div class="twelve columns">
+        <ul class="copyright">
+          <li>Design &copy; Copyright 2014 CeeVee</li>
+          <li>Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a></li>
+        </ul>
+      </div>
+      <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+    </div>
+  </footer> <!-- Footer End-->
+
+  <!-- Java Script
+  ================================================== -->
+  <script src="js/jquery-1.10.2.min.js"></script>
+  <script src="js/jquery-migrate-1.2.1.min.js"></script>
+  <script src="js/jquery.flexslider.js"></script>
+  <script src="js/waypoints.js"></script>
+  <script src="js/jquery.fittext.js"></script>
+  <script src="js/magnific-popup.js"></script>
+  <script src="js/init.js"></script>
+</body>
+</html>
