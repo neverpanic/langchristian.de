@@ -48,3 +48,6 @@ Heute ist er als Musiklehrer am Gymnasium tätig. Christian dirigiert mehrere
 Blasorchester und ist ein gefragter Dozent für Orchester und Schlagwerk.
 Konzerte und Workshops führten ihn durch Deutschland und viele europäische
 Staaten bis in die USA.
+
+Christian ist seit 2019 Verbandsdirigent des Nordbayerischen Musikbundes und
+Vorsitzender der Musikkommission.
